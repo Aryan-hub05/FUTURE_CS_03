@@ -1,58 +1,93 @@
-# Task 3 – API Security Risk Analysis
+# 🔐 Task 3 – API Security Risk Analysis  
+**Future Interns – Cyber Security Internship**
 
-This repository contains Task 3 submission for the **Future Interns Cyber Security Internship**.
-
-The objective of this task is to analyze a public API, identify potential security risks, and recommend mitigation strategies.
-
----
-
-## 🌐 API Analyzed
-https://jsonplaceholder.typicode.com/users  
-(Public demo API used for testing and learning purposes.)
+## 📌 Objective
+The objective of this task is to analyze a public/demo API for common security risks related to authentication, authorization, data exposure, rate limiting, and input validation, and to document the findings in a professional and business-friendly manner.
 
 ---
 
-## 🛠 Tools Used
-- Browser
-- Postman (optional)
+## 🌐 Target API
+**API Tested:** Public / Demo API  
+(Used strictly for educational and legal testing purposes)
 
 ---
 
-## 🔍 Security Risks Identified
-
-### 1. No Authentication Required
-- **Risk Level:** High  
-- **Impact:** Anyone can access sensitive user data.
-- **Recommendation:** Implement authentication tokens or API keys.
+## 🛠️ Tools Used
+- Postman  
+- Browser Developer Tools  
+- Public Sample API  
 
 ---
 
-### 2. Data Exposure
-- User information returned without restrictions.
+## 🔍 API Security Findings
+
+### 1️⃣ Weak / Missing Authentication
 - **Risk Level:** Medium  
-- **Recommendation:** Limit exposed fields and enforce access control.
+- **Issue:** API endpoints can be accessed without strong authentication mechanisms.  
+- **Impact:** Unauthorized users may access or manipulate API data.  
+- **Recommendation:**  
+  Implement token-based authentication (JWT / API Keys) and enforce access control on all sensitive endpoints.
 
 ---
 
-### 3. No Rate Limiting
-- Unlimited requests allowed.
+### 2️⃣ Excessive Data Exposure
 - **Risk Level:** Medium  
-- **Recommendation:** Apply rate limiting to prevent abuse.
+- **Issue:** API responses return unnecessary or sensitive fields.  
+- **Impact:** Attackers can gather internal or user-related information.  
+- **Recommendation:**  
+  Apply response filtering and return only required data fields.
+
+---
+
+### 3️⃣ Missing Rate Limiting
+- **Risk Level:** Medium  
+- **Issue:** Unlimited API requests are allowed from a single client.  
+- **Impact:** Can lead to brute-force attacks or denial-of-service (DoS).  
+- **Recommendation:**  
+  Implement rate limiting and request throttling on API endpoints.
+
+---
+
+### 4️⃣ Input Validation Issues
+- **Risk Level:** Medium  
+- **Issue:** User inputs are not properly validated or sanitized.  
+- **Impact:** May allow injection attacks such as SQL Injection or XSS.  
+- **Recommendation:**  
+  Validate and sanitize all user inputs on the server side.
+
+---
+
+## 📊 Risk Summary
+
+| Vulnerability | Risk Level |
+|--------------|-----------|
+| Weak Authentication | Medium |
+| Data Exposure | Medium |
+| Missing Rate Limiting | Medium |
+| Input Validation Issues | Medium |
+
+---
+
+## 📸 Evidence
+Screenshots of Postman requests and API responses are included in the repository to support the findings.
 
 ---
 
 ## 📚 Key Learnings
-- API security fundamentals
-- Risk identification
-- Secure API design principles
+- API security fundamentals  
+- Authentication & authorization risks  
+- Importance of rate limiting  
+- Secure API documentation practices  
 
 ---
 
-## ⚠ Disclaimer
-This analysis is for educational purposes using a public demo API.
+## ⚠️ Disclaimer
+This API security analysis was conducted **only for educational purposes** on a legal testing API.  
+No exploitation or harmful activity was performed.
 
 ---
 
 ## ✅ Task Status
 ✔ Completed  
+✔ GitHub Documented  
 ✔ Internship Ready
